@@ -88,14 +88,14 @@
             // الاصنافToolStripMenuItem
             // 
             this.الاصنافToolStripMenuItem.Name = "الاصنافToolStripMenuItem";
-            this.الاصنافToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.الاصنافToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.الاصنافToolStripMenuItem.Text = "الاصناف ";
             this.الاصنافToolStripMenuItem.Click += new System.EventHandler(this.الاصنافToolStripMenuItem_Click);
             // 
             // الزبائنToolStripMenuItem
             // 
             this.الزبائنToolStripMenuItem.Name = "الزبائنToolStripMenuItem";
-            this.الزبائنToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.الزبائنToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.الزبائنToolStripMenuItem.Text = "الزبائن";
             this.الزبائنToolStripMenuItem.Click += new System.EventHandler(this.الزبائنToolStripMenuItem_Click);
             // 
@@ -113,6 +113,7 @@
             this.الطلبياتToolStripMenuItem.Name = "الطلبياتToolStripMenuItem";
             this.الطلبياتToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.الطلبياتToolStripMenuItem.Text = "الطلبيات";
+            this.الطلبياتToolStripMenuItem.Click += new System.EventHandler(this.الطلبياتToolStripMenuItem_Click);
             // 
             // استلامطلبيةToolStripMenuItem
             // 

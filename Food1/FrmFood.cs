@@ -23,17 +23,11 @@ namespace Food1
         
         public void Enalbe_Controls()
         {
-            btn_Update.Enabled = true;
-            btn_Delete.Enabled = true;
-            btnSave.Enabled = true;
+            btn_Updat.Enabled = true;
+            btn_Delet.Enabled = true;
+            btn_Save.Enabled = true;
         }
-
-        private void btn_Out_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("هل انت متاكد من الخروج ؟", "!تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-               this.Close();
-        }
+       
         int Max_Nomber()//دالة لاخذ اعلى قيمة في قاعدة البيانات
         {
             DbConn dbConn =new DbConn();
@@ -43,25 +37,22 @@ namespace Food1
             cmd.CommandType = CommandType.Text;//حددنا نوعية التنفيذ 
             cmd.Connection = dbConn.connect();//الاتصال بالقاعدة
             cmd.ExecuteNonQuery();//تنفيذ الأمر بدون ارجاع أي مخرجات
-            var Max=cmd.ExecuteScalar();//استخلاص القيمة ووضعناها بمتفير تنفيذ الأمر مع ارجاع قيمة واحدة max
-            return Int32.Parse(Max.ToString());
+            var Max=cmd.ExecuteScalar();//استخلاص القيمة ووضعناها بمتفير تنفيذ الأمر مع ارجاع قيمة واحدة max           
+            return Int32.Parse(Max.ToString());//تحويل القيمة من نصية الى عددية           
         }
-              
         void save()
-        {                       
+        {
             if ((txtNa_Item.Text == "") && (txtPrice_Item.Text == ""))
             {
                 txtNa_Item.Focus();
                 txtNa_Item.Text = "";
                 txtPrice_Item.Text = "";
-                MessageBox.Show(" قم بادخال معلومات الصنف ");               
+                MessageBox.Show(" قم بادخال معلومات الصنف ");
                 txtNa_Item.Enabled = true;
-                txtPrice_Item.Enabled = true;
-                btn_Delete.Enabled = false;
-                btn_Update.Enabled = false;
+                txtPrice_Item.Enabled = true;                
             }
             else
-            {
+            {               
                 DbConn db = new DbConn();
                 db.Disconnect();
                 string Sql = "insert into items (no_items,name_items,item_price) values (@no_items,@name_items,@item_price)";
@@ -74,17 +65,18 @@ namespace Food1
                 cmd.ExecuteNonQuery();
                 db.conn.Close();
                 MessageBox.Show("تم اضافة الصنف بنجاح  ");
-
-                Enalbe_Controls();
+                int x = Max_Nomber();
+                x++;
+                txtNo_Item.Text = x.ToString();
                 txtNa_Item.Text = "";
                 txtPrice_Item.Text = "";
                 txtNa_Item.Enabled = false;
                 txtPrice_Item.Enabled = false;
 
-            }
+            }             
         }
         public void FrmFood_Load(object sender, EventArgs e)//عند بدء عمل الفورم تبدا عملية الزيادة
-        {            
+        {
             DbConn db = new DbConn();
             ds=new DataSet();
             int max = Max_Nomber();
@@ -94,29 +86,10 @@ namespace Food1
             db.Disconnect();
             SqlCommand cmd = new SqlCommand(Sql,db.connect());
             SqlDataAdapter da=new SqlDataAdapter(cmd);
-            da.Fill(ds, "Table");
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)//استدعاء دالة الحفظ
+            da.Fill(ds, "Table");            
+        }              
+        private void btn_ShowAll_Click(object sender, EventArgs e)
         {
-            save();            
-            int max = Max_Nomber();
-            max++;
-            txtNo_Item.Text = max.ToString();                       
-        }
-        private void btn_Show_All_Click(object sender, EventArgs e)
-        {
-
-            if ((txtNa_Item.Text != "") && (txtNa_Item.Text != ""))
-            {
-                DialogResult result = MessageBox.Show("انهاء عملية تعديل والعودة للاصناف", "!تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                    txtNa_Item.Text = "";
-                txtPrice_Item.Text = "";
-                Enalbe_Controls();
-
-            }
-
             DbConn db = new DbConn();
             string Sql = " ", Value = " ";
             FrmSearch frm = new FrmSearch();
@@ -129,7 +102,7 @@ namespace Food1
             Sql = "select * from items where name_items='" + Value + "'";
             db.Disconnect();
             SqlCommand cmd = new SqlCommand(Sql, db.connect());
-            SqlDataReader rd = cmd.ExecuteReader();//تنفيذ الأمر مع ارجاع من نوع IDataReader           
+            SqlDataReader rd = cmd.ExecuteReader();//تنفيذ الأمر مع ارجاع من نوع IDataReader
             while (rd.Read() == true)
             {
                 txtNo_Item.Text = rd[0].ToString();
@@ -139,18 +112,22 @@ namespace Food1
                 txtNa_Item.Focus();
                 txtNa_Item.Enabled = true;
                 txtPrice_Item.Enabled = true;
-                btnSave.Enabled = false;
-            }           
+                btn_Save.Enabled = false;
+            }
+        }      
+        private void btn_Save_Click(object sender, EventArgs e)//استدعاء دالة الحفظ
+        {
+            save();
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void btn_Delet_Click(object sender, EventArgs e)
         {
             if ((txtNa_Item.Text == "") && (txtPrice_Item.Text == ""))
             {
                 MessageBox.Show("الرجاء قم بتحديدالصنف الذي تريد حذفة");
-                
+
             }
-            else 
+            else
             {
                 DbConn db = new DbConn();
                 db.Disconnect();
@@ -162,18 +139,17 @@ namespace Food1
                 if (result == DialogResult.Yes)
                 {
                     MessageBox.Show("تم الحذف");
+
                     Enalbe_Controls();
                     txtPrice_Item.Text = "";
                     txtNa_Item.Text = "";
                     txtNa_Item.Enabled = false;
-                    txtPrice_Item.Enabled = false;
+                    txtPrice_Item.Enabled = false;                   
                 }
-                else { }
             }
-          
-        }       
+        }
 
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void btn_Updat_Click(object sender, EventArgs e)
         {
             if ((txtNa_Item.Text == "") && (txtPrice_Item.Text == ""))
             {
@@ -204,27 +180,20 @@ namespace Food1
                     txtPrice_Item.Enabled = false;
                 }
                 else { }
-            }                
+            }
         }
-
-        private void btn_First_item_Click(object sender, EventArgs e)
+        private void btn_First_It_Click(object sender, EventArgs e)
         {
-            i=0;
+            i = 0;
             txtNo_Item.Text = ds.Tables[0].Rows[i][0].ToString();
             txtNa_Item.Text = ds.Tables[0].Rows[i][1].ToString();
             txtPrice_Item.Text = ds.Tables[0].Rows[i][2].ToString();
+            txtNa_Item.Enabled = false;
+            txtPrice_Item.Enabled = false;
+            MessageBox.Show("F I R S T  I T E M S" + "\n\n" + "Nomber Items: " + txtNo_Item.Text + "\n\n" + "Name Items: " + txtNa_Item.Text + "\n\n" + "Price Items: " + txtPrice_Item.Text);
         }
 
-        private void btn_Last_item_Click(object sender, EventArgs e)
-        {
-            i = ds.Tables[0].Rows.Count - 1;//  تقوم بارجاع عدد السجلات مخزنه ب  -1 count  الدالة 
-            txtNo_Item.Text = ds.Tables[0].Rows[i][0].ToString();
-            txtNa_Item.Text = ds.Tables[0].Rows[i][1].ToString();
-            txtPrice_Item.Text = ds.Tables[0].Rows[i][2].ToString();
-
-        }
-
-        private void btn_previous_item_Click(object sender, EventArgs e)
+        private void btn_previous_IT_Click(object sender, EventArgs e)
         {
             if (i < ds.Tables[0].Rows.Count - 1)
             {
@@ -235,16 +204,34 @@ namespace Food1
             }
         }
 
-        private void btn_Next_item_Click(object sender, EventArgs e)
+        private void btn_Next_IT_Click(object sender, EventArgs e)
         {
-            if (i !=0)
+            if (i != 0)
             {
                 i--;
                 txtNo_Item.Text = ds.Tables[0].Rows[i][0].ToString();
                 txtNa_Item.Text = ds.Tables[0].Rows[i][1].ToString();
                 txtPrice_Item.Text = ds.Tables[0].Rows[i][2].ToString();
             }
+        }
 
+        private void btn_Last_IT_Click(object sender, EventArgs e)
+        {
+
+            i = ds.Tables[0].Rows.Count - 1;//  تقوم بارجاع عدد السجلات مخزنه ب  -1 count  الدالة 
+            txtNo_Item.Text = ds.Tables[0].Rows[i][0].ToString();
+            txtNa_Item.Text = ds.Tables[0].Rows[i][1].ToString();
+            txtPrice_Item.Text = ds.Tables[0].Rows[i][2].ToString();
+            txtNa_Item.Enabled = false;
+            txtPrice_Item.Enabled = false;
+            MessageBox.Show("L A S T  I T E M S" + "\n\n" + "Nomber Items: " + txtNo_Item.Text + "\n\n" + "Name Items: " + txtNa_Item.Text + "\n\n" + "Price Items: " + txtPrice_Item.Text);
+        }
+
+        private void btn_Out_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("هل انت متاكد من الخروج ؟", "!تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                this.Close();
         }
     }    
 }

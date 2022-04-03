@@ -37,15 +37,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Delete = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Out = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Show_All = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_First_item = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Last_item = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Next_item = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_previous_item = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_First_It = new System.Windows.Forms.Button();
+            this.btn_previous_IT = new System.Windows.Forms.Button();
+            this.btn_Next_IT = new System.Windows.Forms.Button();
+            this.btn_Last_IT = new System.Windows.Forms.Button();
+            this.btn_ShowAll = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Delet = new System.Windows.Forms.Button();
+            this.btn_Updat = new System.Windows.Forms.Button();
+            this.btn_Out = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,106 +107,101 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
             // 
-            // btnSave
+            // btn_First_It
             // 
-            this.btnSave.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btnSave.Appearance.Font")));
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.Name = "btnSave";
-            this.btnSave.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btn_First_It.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_First_It, "btn_First_It");
+            this.btn_First_It.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_First_It.Name = "btn_First_It";
+            this.btn_First_It.UseVisualStyleBackColor = false;
+            this.btn_First_It.Click += new System.EventHandler(this.btn_First_It_Click);
             // 
-            // btn_Delete
+            // btn_previous_IT
             // 
-            this.btn_Delete.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btn_Delete.Appearance.Font")));
-            this.btn_Delete.Appearance.Options.UseFont = true;
-            this.btn_Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_Delete, "btn_Delete");
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            this.btn_previous_IT.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_previous_IT, "btn_previous_IT");
+            this.btn_previous_IT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_previous_IT.Name = "btn_previous_IT";
+            this.btn_previous_IT.UseVisualStyleBackColor = false;
+            this.btn_previous_IT.Click += new System.EventHandler(this.btn_previous_IT_Click);
+            // 
+            // btn_Next_IT
+            // 
+            this.btn_Next_IT.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_Next_IT, "btn_Next_IT");
+            this.btn_Next_IT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Next_IT.Name = "btn_Next_IT";
+            this.btn_Next_IT.UseVisualStyleBackColor = false;
+            this.btn_Next_IT.Click += new System.EventHandler(this.btn_Next_IT_Click);
+            // 
+            // btn_Last_IT
+            // 
+            this.btn_Last_IT.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_Last_IT, "btn_Last_IT");
+            this.btn_Last_IT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Last_IT.Name = "btn_Last_IT";
+            this.btn_Last_IT.UseVisualStyleBackColor = false;
+            this.btn_Last_IT.Click += new System.EventHandler(this.btn_Last_IT_Click);
+            // 
+            // btn_ShowAll
+            // 
+            this.btn_ShowAll.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_ShowAll, "btn_ShowAll");
+            this.btn_ShowAll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_ShowAll.Name = "btn_ShowAll";
+            this.btn_ShowAll.UseVisualStyleBackColor = false;
+            this.btn_ShowAll.Click += new System.EventHandler(this.btn_ShowAll_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_Save, "btn_Save");
+            this.btn_Save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Delet
+            // 
+            this.btn_Delet.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_Delet, "btn_Delet");
+            this.btn_Delet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Delet.Name = "btn_Delet";
+            this.btn_Delet.UseVisualStyleBackColor = false;
+            this.btn_Delet.Click += new System.EventHandler(this.btn_Delet_Click);
+            // 
+            // btn_Updat
+            // 
+            this.btn_Updat.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btn_Updat, "btn_Updat");
+            this.btn_Updat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Updat.Name = "btn_Updat";
+            this.btn_Updat.UseVisualStyleBackColor = false;
+            this.btn_Updat.Click += new System.EventHandler(this.btn_Updat_Click);
             // 
             // btn_Out
             // 
-            this.btn_Out.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btn_Out.Appearance.Font")));
-            this.btn_Out.Appearance.Options.UseFont = true;
-            this.btn_Out.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Out.ImageOptions.Image")));
+            this.btn_Out.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.btn_Out, "btn_Out");
+            this.btn_Out.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Out.Name = "btn_Out";
-            this.btn_Out.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btn_Out.UseVisualStyleBackColor = false;
             this.btn_Out.Click += new System.EventHandler(this.btn_Out_Click);
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btn_Update.Appearance.Font")));
-            this.btn_Update.Appearance.Options.UseFont = true;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_Update, "btn_Update");
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
-            // 
-            // btn_Show_All
-            // 
-            this.btn_Show_All.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("btn_Show_All.Appearance.Font")));
-            this.btn_Show_All.Appearance.Options.UseFont = true;
-            this.btn_Show_All.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Show_All.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_Show_All, "btn_Show_All");
-            this.btn_Show_All.Name = "btn_Show_All";
-            this.btn_Show_All.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_Show_All.Click += new System.EventHandler(this.btn_Show_All_Click);
-            // 
-            // btn_First_item
-            // 
-            this.btn_First_item.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_First_item.Appearance.Options.UseForeColor = true;
-            this.btn_First_item.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_First_item.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_First_item, "btn_First_item");
-            this.btn_First_item.Name = "btn_First_item";
-            this.btn_First_item.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_First_item.Click += new System.EventHandler(this.btn_First_item_Click);
-            // 
-            // btn_Last_item
-            // 
-            this.btn_Last_item.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_Last_item.Appearance.Options.UseForeColor = true;
-            this.btn_Last_item.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Last_item.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_Last_item, "btn_Last_item");
-            this.btn_Last_item.Name = "btn_Last_item";
-            this.btn_Last_item.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_Last_item.Click += new System.EventHandler(this.btn_Last_item_Click);
-            // 
-            // btn_Next_item
-            // 
-            this.btn_Next_item.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Next_item.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_Next_item, "btn_Next_item");
-            this.btn_Next_item.Name = "btn_Next_item";
-            this.btn_Next_item.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_Next_item.Click += new System.EventHandler(this.btn_Next_item_Click);
-            // 
-            // btn_previous_item
-            // 
-            this.btn_previous_item.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_previous_item.ImageOptions.Image")));
-            resources.ApplyResources(this.btn_previous_item, "btn_previous_item");
-            this.btn_previous_item.Name = "btn_previous_item";
-            this.btn_previous_item.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btn_previous_item.Click += new System.EventHandler(this.btn_previous_item_Click);
             // 
             // FrmFood
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Controls.Add(this.btn_previous_item);
-            this.Controls.Add(this.btn_Next_item);
-            this.Controls.Add(this.btn_Last_item);
-            this.Controls.Add(this.btn_First_item);
-            this.Controls.Add(this.btn_Show_All);
-            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Out);
-            this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btn_Updat);
+            this.Controls.Add(this.btn_Delet);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_ShowAll);
+            this.Controls.Add(this.btn_Last_IT);
+            this.Controls.Add(this.btn_Next_IT);
+            this.Controls.Add(this.btn_previous_IT);
+            this.Controls.Add(this.btn_First_It);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -224,20 +219,20 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPrice_Item;
-        private System.Windows.Forms.TextBox txtNo_Item;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btn_Delete;
-        private DevExpress.XtraEditors.SimpleButton btn_Out;
-        private DevExpress.XtraEditors.SimpleButton btn_Update;
-        private DevExpress.XtraEditors.SimpleButton btn_Show_All;
-        private DevExpress.XtraEditors.SimpleButton btn_First_item;
-        private DevExpress.XtraEditors.SimpleButton btn_Last_item;
-        private DevExpress.XtraEditors.SimpleButton btn_Next_item;
-        private DevExpress.XtraEditors.SimpleButton btn_previous_item;
-        protected System.Windows.Forms.TextBox txtNa_Item;
+        public System.Windows.Forms.TextBox txtNo_Item;
+        private System.Windows.Forms.TextBox txtNa_Item;
+        private System.Windows.Forms.Button btn_First_It;
+        private System.Windows.Forms.Button btn_previous_IT;
+        private System.Windows.Forms.Button btn_Next_IT;
+        private System.Windows.Forms.Button btn_Last_IT;
+        private System.Windows.Forms.Button btn_ShowAll;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Delet;
+        private System.Windows.Forms.Button btn_Updat;
+        private System.Windows.Forms.Button btn_Out;
     }
 }

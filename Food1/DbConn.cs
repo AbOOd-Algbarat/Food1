@@ -29,8 +29,12 @@ namespace Food1
             {
                 conn.Close();
             }
-        }
-        
+        }        
     }
+    class DataCollection
+    {
+        public static string Sql = "";
+        public static string Sql_Where = "";
 
+    }
 }

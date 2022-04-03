@@ -78,6 +78,12 @@
     <Compile Include="FrmFood.Designer.cs">
       <DependentUpon>FrmFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrder.Designer.cs">
+      <DependentUpon>FrmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFood.resx">
       <DependentUpon>FrmFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrder.resx">
+      <DependentUpon>FrmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>

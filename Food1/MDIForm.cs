@@ -106,5 +106,11 @@ namespace Food1
             FrmCustomer frm = new FrmCustomer();
             frm.Show();
         }
+
+        private void الطلبياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrder frm= new FrmOrder();   
+            frm.Show();
+        }        
     }
 }

@@ -37,7 +37,7 @@ namespace Food1
         }              
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {               
+        {    
             txt_Search.Text = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();            
         }
 
@@ -61,12 +61,11 @@ namespace Food1
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            FrmSearch frm=new FrmSearch();
-            frm.
+            FrmSearch frm=new FrmSearch();           
             if (txt_Search.Text == "")
             {
-                DialogResult result = MessageBox.Show("اختر صنف لاتمام عملية التعديل", "!تحذير", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);                
-            }            
+              MessageBox.Show("اختر صنف لاتمام عملية التعديل", "!تحذير", MessageBoxButtons.OK, MessageBoxIcon.Question);                
+            }
         }
     }
 }
