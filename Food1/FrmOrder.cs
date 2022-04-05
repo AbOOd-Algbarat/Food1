@@ -24,12 +24,17 @@ namespace Food1
         }       
         private string Max(string Sql)
         {
-            
+            int x = 0;
             DbConn db=new DbConn();
             db.Disconnect();
             SqlCommand cmd = new SqlCommand(Sql,db.connect());
-            cmd.ExecuteNonQuery();
-            var x=cmd.ExecuteScalar();
+            SqlDataReader dr= cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                if(x<Int32.Parse(dr[0].ToString()))//اذا كان x اقل من قيمة الحقل خذها وخزنها في
+                    x=Int32.Parse(dr[0].ToString());
+            }
+            x++;
             return x.ToString();
         }
         private void FillDataGride()
@@ -69,8 +74,9 @@ namespace Food1
                     comb_NameCostumer.Items.Add(reader["customer_name"].ToString());////هنا قمنا بتعئة ارقام المستخدمين في combo name 
 
                 }
+
                 int x = 0;
-                string max = Max(Sql);
+                string max = Max("select Order_Number From head_order");
                 if (max == null || max == "")
                 {
                     x = 0;
@@ -89,7 +95,7 @@ namespace Food1
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error | \n\n" + ex.Message.ToString());
+                MessageBox.Show("Error | \n\n" +"ex.ToString(): "+ ex.Message.ToString());
             }           
         }
         private void comb_NoCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,7 +120,7 @@ namespace Food1
                 {
                     DbConn db = new DbConn();
                     db.Disconnect();
-                    SqlCommand cmd = new SqlCommand("insert into head_order (Order_Number,Oreder_Date,customer_number,Total) values (@Order_Number,@Oreder_Date,@customer_number,@Total) ");
+                    SqlCommand cmd = new SqlCommand("insert into head_order (Order_Number,Oreder_Date,customer_number,Total) values (@Order_Number,@Oreder_Date,@customer_number@,@Total)");///كل حقل رح ياخد المعامل المقابل له
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = db.connect();
                     cmd.Parameters.AddWithValue("@Order_Number", txt_No_order.Text);
@@ -134,7 +140,6 @@ namespace Food1
         private void btn_Save_Click(object sender, EventArgs e)
         {
             Savehead();           
-            Savedetails();
             this.Close();  
         }
         private void Savedetails()
@@ -142,7 +147,7 @@ namespace Food1
             try
             {
                 DbConn db = new DbConn();
-                string x1 = Max("Select Max (Nomber_Det_Order) From detail_order");
+                string x1 = Max("Select Nomber_Det_Order From detail_order");
                 int x;
                 if (x1 == "")
                     x = 0;
