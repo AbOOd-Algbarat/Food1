@@ -120,7 +120,7 @@ namespace Food1
                 {
                     DbConn db = new DbConn();
                     db.Disconnect();
-                    SqlCommand cmd = new SqlCommand("insert into head_order (Order_Number,Oreder_Date,customer_number,Total) values (@Order_Number,@Oreder_Date,@customer_number@,@Total)");///كل حقل رح ياخد المعامل المقابل له
+                    SqlCommand cmd = new SqlCommand("insert into head_order (Order_Number,Oreder_Date,customer_number,Total) values (@Order_Number,@Oreder_Date,@customer_number,@Total)");///كل حقل رح ياخد المعامل المقابل له
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = db.connect();
                     cmd.Parameters.AddWithValue("@Order_Number", txt_No_order.Text);
@@ -167,7 +167,7 @@ namespace Food1
                     cmd.Parameters.AddWithValue("@no_items", dataGridView1.Rows[i].Cells["No_Items"].Value);
                     cmd.Parameters.AddWithValue("@Account", dataGridView1.Rows[i].Cells["Account"].Value);
                     cmd.Parameters.AddWithValue("@Price", dataGridView1.Rows[i].Cells["Price"].Value);
-                    cmd.Parameters.AddWithValue("@Total", dataGridView1.Rows[i].Cells["Total"].Value);
+                    cmd.Parameters.AddWithValue("@Total", dataGridView1.Rows[i].Cells["Total"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Descount", dataGridView1.Rows[i].Cells["Descount"].Value);
                     x++;
                     cmd.ExecuteNonQuery();
@@ -255,7 +255,7 @@ namespace Food1
                 {
                     double x1 = double.Parse(dataGridView1.Rows[e.RowIndex].Cells["Total"].Value.ToString());
                     double x2 = double.Parse(dataGridView1.Rows[e.RowIndex].Cells["Descount"].Value.ToString()); 
-                    double x3 = x1*x2;
+                    double x3 = x1-x2;
                     dataGridView1.Rows[e.RowIndex].Cells["Amount"].Value = x3.ToString();
                 }
             }
@@ -269,8 +269,8 @@ namespace Food1
                 double x2 = double.Parse(dataGridView1.Rows[e.RowIndex].Cells["Descount"].Value.ToString());
                 double x3=x1 - x2;
                 dataGridView1.Rows[e.RowIndex].Cells["Amount"].Value = x3.ToString();
-                Am+=double.Parse( dataGridView1.Rows[e.RowIndex].Cells["Amount"].Value.ToString());
-                txt_Total.Text=Am.ToString();                
+                Am+=double.Parse(dataGridView1.Rows[e.RowIndex].Cells["Amount"].Value.ToString());
+                txt_Total.Text = Am.ToString();            
             }
         }       
     }

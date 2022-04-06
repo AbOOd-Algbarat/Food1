@@ -101,6 +101,20 @@ namespace Food1
                 btn_Save.Enabled = false;
             }
         }
+        private void FrmCustomer_Load(object sender, EventArgs e)
+        {
+            DbConn db = new DbConn();
+            ds = new DataSet();
+            int x = Max_Nomber();
+            x++;
+            txtNomber_Customer.Text = x.ToString();
+            string Sql = "Select * From customers";
+            db.Disconnect();
+            SqlCommand cmd = new SqlCommand(Sql, db.connect());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds, "Table");
+        }
+
         private void btn_Delet_Click(object sender, EventArgs e)
         {
             if ((txtName_Customer.Text == "") && (txtPhon_Customer.Text == ""))
@@ -157,21 +171,7 @@ namespace Food1
                     txtPhon_Customer.Enabled = false;
                 }
             }
-        }
-        private void FrmCustomer_Load(object sender, EventArgs e)
-        {
-            DbConn db = new DbConn();
-            ds = new DataSet();
-            int x = Max_Nomber();
-            x++;
-            txtNomber_Customer.Text = x.ToString();
-            string Sql = "Select * From customers";
-            db.Disconnect();
-            SqlCommand cmd = new SqlCommand(Sql, db.connect());
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds, "Table");
-        }
-
+        }       
         private void btn_First_Co_Click(object sender, EventArgs e)
         {
             i = 0;
