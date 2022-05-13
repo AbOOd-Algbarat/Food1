@@ -111,6 +111,18 @@ namespace Food1
         {
             FrmOrder frm= new FrmOrder();   
             frm.Show();
-        }        
+        }
+
+        private void استلامطلبيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Detail_Custome frm= new Frm_Detail_Custome();
+            frm.Show();
+        }
+
+        private void MDIForm_Load(object sender, EventArgs e)
+        {
+            Frm_Login frm= new Frm_Login(); 
+            frm.ShowDialog();
+        }
     }
 }

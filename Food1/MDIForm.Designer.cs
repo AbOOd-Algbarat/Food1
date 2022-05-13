@@ -111,15 +111,16 @@
             // الطلبياتToolStripMenuItem
             // 
             this.الطلبياتToolStripMenuItem.Name = "الطلبياتToolStripMenuItem";
-            this.الطلبياتToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.الطلبياتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.الطلبياتToolStripMenuItem.Text = "الطلبيات";
             this.الطلبياتToolStripMenuItem.Click += new System.EventHandler(this.الطلبياتToolStripMenuItem_Click);
             // 
             // استلامطلبيةToolStripMenuItem
             // 
             this.استلامطلبيةToolStripMenuItem.Name = "استلامطلبيةToolStripMenuItem";
-            this.استلامطلبيةToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.استلامطلبيةToolStripMenuItem.Text = "استلام طلبية";
+            this.استلامطلبيةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.استلامطلبيةToolStripMenuItem.Text = "حركة الطلبيات";
+            this.استلامطلبيةToolStripMenuItem.Click += new System.EventHandler(this.استلامطلبيةToolStripMenuItem_Click);
             // 
             // تقاريرToolStripMenuItem
             // 
@@ -167,7 +168,10 @@
             this.Name = "MDIForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "شاشة الطلبيات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIForm_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

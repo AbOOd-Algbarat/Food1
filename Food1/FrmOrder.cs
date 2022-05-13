@@ -78,17 +78,17 @@ namespace Food1
                 int x = 0;
                 string max = Max("select Order_Number From head_order");
                 if (max == null || max == "")
-                {
+                    x++;
                     x = 0;
                     DialogResult result = MessageBox.Show("قاعدة البيانات فارغة \n\n هل تريد اضافة بيانات جديدة", "!تنبية", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     { }
                     else if (result == DialogResult.No)
                         this.Close();
-                }
+                
                 else
                     x = Int32.Parse(Max(Sql));//convart from string to int
-                x++;
+                x+=1;
                 txt_No_order.Text = x.ToString();
                 FillDataGride();
             }
@@ -139,7 +139,8 @@ namespace Food1
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            Savehead();           
+            Savehead();  
+            Savedetails();
             this.Close();  
         }
         private void Savedetails()
@@ -167,7 +168,7 @@ namespace Food1
                     cmd.Parameters.AddWithValue("@no_items", dataGridView1.Rows[i].Cells["No_Items"].Value);
                     cmd.Parameters.AddWithValue("@Account", dataGridView1.Rows[i].Cells["Account"].Value);
                     cmd.Parameters.AddWithValue("@Price", dataGridView1.Rows[i].Cells["Price"].Value);
-                    cmd.Parameters.AddWithValue("@Total", dataGridView1.Rows[i].Cells["Total"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Total", dataGridView1.Rows[i].Cells["Total"].Value);
                     cmd.Parameters.AddWithValue("@Descount", dataGridView1.Rows[i].Cells["Descount"].Value);
                     x++;
                     cmd.ExecuteNonQuery();

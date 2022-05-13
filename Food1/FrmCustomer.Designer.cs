@@ -106,9 +106,9 @@
             this.label2.Location = new System.Drawing.Point(454, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 26);
+            this.label2.Size = new System.Drawing.Size(96, 26);
             this.label2.TabIndex = 2;
-            this.label2.Text = "رقم المستخدم";
+            this.label2.Text = "رقم الزبون";
             // 
             // label4
             // 
@@ -120,9 +120,9 @@
             this.label4.Location = new System.Drawing.Point(445, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 26);
+            this.label4.Size = new System.Drawing.Size(112, 26);
             this.label4.TabIndex = 4;
-            this.label4.Text = "هاتف المستخدم";
+            this.label4.Text = "هاتف الزبون";
             // 
             // label3
             // 
@@ -134,9 +134,9 @@
             this.label3.Location = new System.Drawing.Point(458, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 26);
+            this.label3.Size = new System.Drawing.Size(99, 26);
             this.label3.TabIndex = 3;
-            this.label3.Text = "اسم المستخدم";
+            this.label3.Text = "اسم الزبون";
             // 
             // label1
             // 
@@ -148,9 +148,9 @@
             this.label1.Location = new System.Drawing.Point(9, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 36);
+            this.label1.Size = new System.Drawing.Size(154, 36);
             this.label1.TabIndex = 10;
-            this.label1.Text = "شاشة المستخدمين";
+            this.label1.Text = "شاشة الزبائن";
             // 
             // btn_Last_Co
             // 
@@ -244,7 +244,7 @@
             this.btn_Updat.Name = "btn_Updat";
             this.btn_Updat.Size = new System.Drawing.Size(165, 50);
             this.btn_Updat.TabIndex = 10;
-            this.btn_Updat.Text = "تعديل على المستخدم";
+            this.btn_Updat.Text = "تعديل على العلومات";
             this.btn_Updat.UseVisualStyleBackColor = false;
             this.btn_Updat.Click += new System.EventHandler(this.btn_Updat_Click);
             // 
@@ -260,7 +260,7 @@
             this.btn_Delet.Name = "btn_Delet";
             this.btn_Delet.Size = new System.Drawing.Size(165, 50);
             this.btn_Delet.TabIndex = 9;
-            this.btn_Delet.Text = "حذف المستخدم";
+            this.btn_Delet.Text = "حذف زبون";
             this.btn_Delet.UseVisualStyleBackColor = false;
             this.btn_Delet.Click += new System.EventHandler(this.btn_Delet_Click);
             // 
@@ -276,7 +276,7 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(165, 50);
             this.btn_Save.TabIndex = 8;
-            this.btn_Save.Text = "اضافة مستخدم";
+            this.btn_Save.Text = "اضافة زبون";
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
@@ -292,7 +292,7 @@
             this.btn_ShowAll.Name = "btn_ShowAll";
             this.btn_ShowAll.Size = new System.Drawing.Size(165, 50);
             this.btn_ShowAll.TabIndex = 7;
-            this.btn_ShowAll.Text = " قائمة المستخدمين";
+            this.btn_ShowAll.Text = " قائمة الزبائن";
             this.btn_ShowAll.UseVisualStyleBackColor = false;
             this.btn_ShowAll.Click += new System.EventHandler(this.btn_ShowAll_Click);
             // 
